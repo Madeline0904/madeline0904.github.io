@@ -477,6 +477,9 @@ body {
   .offers__card-info ul li {
     width: 80%;
   }
+  .print-icon {
+    display: none;
+  }
 }
 @media (min-width: 576px) {
   .offers__cards {
