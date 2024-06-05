@@ -303,7 +303,7 @@ body {
   margin-top: 0;
   list-style: none;
   position: relative;
-  color: #2e2e2e;
+  color: black;
   font-size: 13px;
   padding-left: 5rem;
 }
@@ -473,6 +473,11 @@ body {
   text-align: center;
 }
 
+@media (max-width: 576px) {
+  .offers__card-info ul li {
+    width: 80%;
+  }
+}
 @media (min-width: 576px) {
   .offers__cards {
     display: flex;

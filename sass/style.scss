@@ -464,7 +464,13 @@ body {
 
 //media
 // ....................................
-
+@media (max-width: 576px) {
+	.offers {
+		&__card-info ul li {
+			width: 80%;
+		}
+	}
+}
 @media (min-width: 576px) {
 	.offers {
 		&__cards {
