@@ -1,0 +1,137 @@
+.burger-btn,
+.print-icon,
+h2.section-heading,
+.offers__card .offers__card-img,
+.white-block,
+.footer,
+.nav {
+	display: none;
+}
+
+.section-padding {
+	padding: 0;
+}
+
+.header {
+	padding: 2em 2em 0em 2em;
+	height: 20vh;
+	color: #2e2e2e;
+	background: none;
+}
+
+.offers__card {
+	margin: 0;
+	height: 100%;
+	color: #2e2e2e;
+	padding-bottom: 14px;
+}
+
+.offers__card .offers__card-info {
+	transform: rotateY(0deg);
+	opacity: 1;
+	background: none;
+}
+
+.offers__card-img {
+	height: 0%;
+}
+
+.offers__card-img-title {
+	margin-top: -40px;
+	color: #2e2e2e;
+}
+
+.offers__card-info {
+	position: relative;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.offers__card-info ul::before {
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+.offers__card-info > ul li * {
+	text-align: left;
+}
+.offers__card-info ul li {
+	height: 70px;
+	border: none;
+	box-shadow: none;
+	text-align: left;
+}
+.offers__card-info ul li:not(:first-child) {
+	margin-top: 30px;
+}
+.offers__card-info ul li > span {
+	background: #2e2e2e;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+.offers__card-info ul li > span::before,
+.offers__card-info ul li > span::after {
+	border: 2px solid #fefefe;
+	position: absolute;
+	background: #86b7e7;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+.offers__card-info div .title,
+.offers__card-info div .type,
+.offers__card-info div .info {
+	color: #2e2e2e;
+}
+
+.offers__card-info span.number span {
+	color: #2e2e2e;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+.offers__card-info-box {
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.offers__card-info-box div {
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+}
+
+.offers__card-info-box-text {
+	margin-top: 0;
+	text-align: left;
+}
+
+.skills {
+	color: #2e2e2e;
+	background: none;
+}
+.skills .section-heading {
+	color: #2e2e2e;
+}
+
+.skills__levels .skills__level--skill {
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+.skills__level {
+	border: 1px solid rgb(165, 74, 176);
+}
+
+.offers__card-title,
+.contact-title,
+.skills-title {
+	font-weight: 600;
+	padding: 1.5em 5em 0.5em 5em;
+	display: block;
+	width: 100%;
+}
+.offers__card-title:before,
+.contact-title:before,
+.skills-title:before {
+	content: '• • •';
+	margin-right: 10px;
+}

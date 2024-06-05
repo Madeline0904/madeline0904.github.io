@@ -1,0 +1,538 @@
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+}
+
+.white-block {
+  position: absolute;
+  height: 40px;
+  width: 60%;
+  background-color: #fff;
+}
+.white-block-left {
+  bottom: -1px;
+  left: -50px;
+  transform: skew(45deg);
+}
+.white-block-right {
+  top: -1px;
+  right: -50px;
+  transform: skew(45deg);
+}
+
+.btn-special-animation {
+  position: relative;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  z-index: 0;
+}
+.btn-special-animation::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.btn-special-animation:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1755e7;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars::after,
+.burger-btn:hover .burger-btn__bars::before {
+  width: 100%;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  content: "";
+  background-color: #fff;
+  transition: width 0.3s;
+}
+.burger-btn__bars {
+  width: 100%;
+}
+.burger-btn__bars::after {
+  top: 13px;
+  width: 60%;
+}
+.burger-btn__bars::before {
+  top: 27px;
+  width: 30%;
+  transition-delay: 0.1s;
+}
+
+.print-icon {
+  position: fixed;
+  top: 1px;
+  right: 80px;
+  font-size: 3rem;
+  padding: 1em;
+  background: none;
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.print-icon:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 100;
+}
+.nav--active {
+  transform: translateX(0);
+}
+.nav__item {
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em 2em;
+  font-size: 2.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleY(0);
+  transition: transform 0.3s;
+  content: "";
+}
+.nav__item:hover::before {
+  transform: scaleY(1);
+}
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
+}
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+  background-color: #2e2e2e;
+}
+
+.black-print-icon {
+  color: #2e2e2e;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  height: 75vh;
+  text-align: center;
+  color: #fff;
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  background-attachment: scroll;
+}
+.header__heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 300;
+}
+.header__text {
+  font-size: 2rem;
+}
+
+.offers {
+  overflow: hidden;
+}
+.offers__card {
+  position: relative;
+  margin: 1em 0;
+  height: 450px;
+  color: #fff;
+  text-align: left;
+  perspective: 1000px;
+}
+.offers__card:hover .offers__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.offers__card:hover .offers__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.offers__card-title {
+  display: none;
+}
+.offers__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  transition: transform 1s, opacity 1s;
+  overflow: hidden;
+}
+.offers__card-img--first {
+  background-image: linear-gradient(45deg, rgba(20, 23, 23, 0.747), rgba(11, 19, 121, 0.889)), url(../img/books2.jpg);
+  background-position: center;
+}
+.offers__card-img--second {
+  background-image: linear-gradient(45deg, rgba(68, 119, 200, 0.75), rgba(175, 172, 189, 0.471)), url(../img/skills.jpg);
+}
+.offers__card-img--third {
+  background-image: linear-gradient(45deg, rgba(165, 74, 176, 0.75), rgba(92, 87, 107, 0.75)), url(../img/advantages.jpg);
+  background-position: center;
+}
+.offers__card-img-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 2.8rem;
+  text-align: center;
+}
+.offers__card-img-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+}
+.offers__card-img-info i {
+  margin-right: 0.3em;
+}
+.offers__card-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(45deg, rgba(20, 23, 23, 0.747), rgba(11, 19, 121, 0.889));
+  border-radius: 8px;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: transform 1s, opacity 1s;
+}
+.offers__card-info ul {
+  margin: 0;
+  margin-top: 0;
+  list-style: none;
+  position: relative;
+  color: #2e2e2e;
+  font-size: 13px;
+  padding-left: 5rem;
+}
+.offers__card-info ul::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  border-left: 2px dashed #fff;
+}
+.offers__card-info ul li {
+  position: relative;
+  margin-left: 30px;
+  width: 310px;
+  height: 110px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.08);
+}
+.offers__card-info ul li:not(:first-child) {
+  margin-top: 40px;
+}
+.offers__card-info ul li > span {
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  left: -30px;
+  top: 0;
+  position: absolute;
+}
+.offers__card-info ul li > span::before, .offers__card-info ul li > span::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  background: #86b7e7;
+  left: -5px;
+  top: 0;
+}
+.offers__card-info ul li span::after {
+  top: 100%;
+}
+.offers__card-info ul li > div {
+  margin-left: 10px;
+}
+.offers__card-info div .title,
+.offers__card-info div .type {
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+}
+.offers__card-info div .info {
+  color: white;
+  font-weight: 300;
+}
+.offers__card-info div > div {
+  padding-top: 5px;
+}
+.offers__card-info span.number {
+  height: 100%;
+}
+.offers__card-info span.number span {
+  color: white;
+  position: absolute;
+  font-size: 11px;
+  left: -35px;
+}
+.offers__card-info span.number span:first-child {
+  top: 0;
+}
+.offers__card-info span.number span:last-child {
+  top: 100%;
+}
+.offers__card-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2em;
+}
+.offers__card-info-box div {
+  text-align: center;
+}
+.offers__card-info-box i {
+  margin-right: 8px;
+  font-size: 2rem;
+  transition: transform 0.3s;
+}
+.offers__card-info-box i:hover {
+  transform: scale(0.8);
+}
+.offers__card-info-box-text {
+  margin-top: 1em;
+  text-align: center;
+}
+.offers__card .one li {
+  height: 68px;
+}
+.offers__card .one li:not(:first-child) {
+  margin-top: 19px;
+}
+
+.skills {
+  position: relative;
+  color: #fff;
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  overflow: hidden;
+}
+.skills-title {
+  display: none;
+}
+.skills .section-heading {
+  color: #fff;
+}
+.skills .icon {
+  font-size: 4rem;
+  transition: transform 0.3s;
+}
+.skills .icon:hover {
+  transform: scale(0.8);
+}
+.skills__levels {
+  display: flex;
+  justify-content: center;
+}
+.skills__levels .skills__level--skill {
+  background-color: rgb(165, 74, 176);
+  border: 1px solid rgb(165, 74, 176);
+}
+.skills__level {
+  margin-top: 1em;
+  margin-right: 0.5em;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #fff;
+}
+
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+.contact-title {
+  display: none;
+}
+.contact .icon {
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+.contact .icon:hover {
+  color: #1755e7;
+}
+.contact p {
+  font-size: 2rem;
+}
+
+.footer {
+  color: #fff;
+  background-color: #2e2e2e;
+  overflow: hidden;
+}
+.footer__bottom-text {
+  padding: 2em;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .offers__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .offers__card {
+    margin: 1em;
+    width: 80%;
+  }
+}
+@media (min-width: 640px) {
+  .offers ul li {
+    width: 352px;
+  }
+}
+@media (min-width: 700px) {
+  .offers ul li {
+    width: 89%;
+    text-align: center;
+  }
+}
+@media (min-width: 750px) {
+  .offers ul li {
+    width: 89%;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .white-block {
+    height: 50px;
+    width: 45%;
+  }
+  .header__heading {
+    font-size: 6.6rem;
+  }
+  .header__text {
+    font-size: 2.2rem;
+  }
+  .header__btn {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 800px) {
+  .offers-item {
+    text-align: left;
+    margin-top: 1em;
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 1100px) {
+  .offers ul li {
+    width: 85%;
+    text-align: center;
+  }
+  .offers__card {
+    width: 30%;
+  }
+  .offers-item {
+    margin-top: 1em;
+    font-size: 0.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */
