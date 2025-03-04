@@ -3,7 +3,7 @@
 h2.section-heading,
 .offers__card .offers__card-img,
 .white-block,
-.footer,
+
 .nav {
 	display: none;
 }
@@ -134,4 +134,18 @@ h2.section-heading,
 .skills-title:before {
 	content: '• • •';
 	margin-right: 10px;
+}
+.footer {
+	color: #fff;
+	background-color: #2e2e2e;
+	overflow: hidden;
+}
+.bottom-text {
+	padding: 2em;
+	text-align: center;
+}
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1500px;
 }
